@@ -9,8 +9,16 @@ Demo Repository.
 
 ## How to use
 
-Set up a Kubernetes cluster and execute the following command
+1. Set up a Kubernetes cluster and execute the following command
 
 ```
 kubectl apply -f hello-server.yaml
+```
+
+2. Please fix the manifest. The manifest should be able to access the hello-server using port-forward.
+
+```
+kubectl port-forward svc/hello-server 8080:8080
+# Access the hello-server
+curl localhost:8080
 ```
